@@ -1,5 +1,5 @@
 ## Sentry for Glowie
-This plugin integrates [Sentry](https://sentry.io) error profiler with your Glowie application.
+This plugin integrates [Sentry](https://sentry.io) error tracking with your Glowie application.
 
 ## Installation
 Install in your Glowie project using Composer:
@@ -18,7 +18,7 @@ Then add the Sentry class to the `app/config/Config.php` file, into the `plugins
 ```
 
 ## Configuration
-Create a **PHP** project in Sentry, then copy the _DSN URL_ and paste it in your application `.env` file.
+Create a **PHP project** in Sentry, then copy the _DSN URL_ and paste it in your application `.env` file.
 
 ```env
 SENTRY_DSN=https://mysentryapp.ingest.us.sentry.io/123456
