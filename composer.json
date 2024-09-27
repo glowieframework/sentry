@@ -1,0 +1,28 @@
+{
+    "name": "glowieframework/sentry",
+    "description": "Sentry integration plugin for Glowie Framework",
+    "license": "MIT",
+    "homepage": "https://gabrielsilva.dev.br/glowie",
+    "support": {
+        "issues": "https://github.com/glowieframework/sentry/issues",
+        "source": "https://github.com/glowieframework/sentry"
+    },
+    "authors": [
+        {
+            "name": "Gabriel Silva",
+            "email": "glowie@gabrielsilva.dev.br",
+            "homepage": "https://gabrielsilva.dev.br/glowie"
+        }
+    ],
+    "require-dev": {
+        "glowieframework/glowie-core": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Glowie\\Plugins\\Sentry\\": "src/"
+        }
+    },
+    "require": {
+        "sentry/sentry": "^4.9"
+    }
+}
