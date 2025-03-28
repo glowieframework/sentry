@@ -4,7 +4,6 @@ namespace Glowie\Plugins\Sentry;
 
 use Config;
 use Env;
-use Glowie\Core\Exception\PluginException;
 use Glowie\Core\Plugin;
 
 /**
@@ -14,7 +13,7 @@ use Glowie\Core\Plugin;
  * @author Glowie
  * @copyright Copyright (c) Glowie
  * @license MIT
- * @link https://gabrielsilva.dev.br/glowie
+ * @link https://glowie.gabrielsilva.dev.br
  */
 class Sentry extends Plugin
 {
@@ -24,11 +23,12 @@ class Sentry extends Plugin
     public function register()
     {
         // Checks for the DSN setting
-        if (empty(Env::get('SENTRY_DSN'))) throw new PluginException('Sentry plugin requires the SENTRY_DSN env setting');
+        $dsn = Env::get('SENTRY_DSN');
+        if (empty($dsn) || $dsn === 'false') return;
 
         // Setup Sentry
         \Sentry\init([
-            'dsn' => Env::get('SENTRY_DSN'),
+            'dsn' => $dsn,
             'environment' => Config::get('env', Env::get('APP_ENV', 'development')),
             'sample_rate' => floatval(Env::get('SENTRY_SR', 1.0))
         ]);

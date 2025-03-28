@@ -24,5 +24,7 @@ Create a **PHP project** in Sentry, then copy the _DSN URL_ and paste it in your
 SENTRY_DSN=https://mysentryapp.ingest.us.sentry.io/123456
 ```
 
+To test if the integration works, throw any exception in your application and check if it will be captured on Sentry dashboard.
+
 ## Credits
 Sentry plugin and Glowie are currently being developed by [Gabriel Silva](https://gabrielsilva.dev.br).
