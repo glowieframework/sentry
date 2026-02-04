@@ -4,6 +4,7 @@ namespace Glowie\Plugins\Sentry;
 
 use Config;
 use Env;
+use Throwable;
 use Glowie\Core\Plugin;
 
 /**
@@ -32,5 +33,14 @@ class Sentry extends Plugin
             'environment' => Config::get('env', Env::get('APP_ENV', 'development')),
             'sample_rate' => floatval(Env::get('SENTRY_SR', 1.0))
         ]);
+    }
+
+    /**
+     * Captures an exception and sends it to Sentry.
+     * @param Throwable $th An exception to be captured.
+     */
+    public static function capture(Throwable $th)
+    {
+        return \Sentry\captureException($th);
     }
 }

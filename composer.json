@@ -15,8 +15,8 @@
         }
     ],
     "require": {
-        "glowieframework/glowie-core": "^1.7",
-        "sentry/sentry": "^4.9"
+        "glowieframework/glowie-core": "*",
+        "sentry/sentry": "^4.19"
     },
     "autoload": {
         "psr-4": {
